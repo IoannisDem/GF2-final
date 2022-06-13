@@ -1,0 +1,32 @@
+CIRCUIT jk1(IN = 4, OUT = 2)
+{
+	NAND nand[1 TO 2](IN = 3);
+	NAND nand[3 TO 4](IN = 2);
+
+	CONNECT nand1 -> nand3.I1, nand2 -> nand4.I2;
+	CONNECT nand3 -> nand4.I1, nand4 -> nand3.I2;
+	CONNECT nand4 -> nand1.I1, nand3 -> nand2.I3;
+
+	INPUT J = nand1.I2, CLOCK1 = nand1.I3;
+	INPUT K = nand2.I2, CLOCK2 = nand2.I1;
+
+	OUTPUT Q = nand3, QBAR = nand4;
+};
+
+# SWITCH on = 1;
+
+# CLOCK clk(PERIOD=1);
+
+# CONNECT on -> jk1.J, on -> jk2.J, on -> jk3.J;
+# CONNECT on -> jk1.K, on -> jk2.K, on -> jk3.K;
+
+# CONNECT clk -> jk1.CLOCK, jk1.QBAR -> jk2.CLOCK, jk2.QBAR -> jk3.CLOCK;
+
+# MONITOR jk1.Q, jk2.Q, jk3.Q;
+
+SWITCH J1 = 0, K1 = 0;
+CLOCK clk1(PERIOD=1), clk2(PERIOD=1);
+
+CONNECT J1 -> jk1.J, K1 -> jk1.K, clk1 -> jk1.CLOCK1, clk2 -> jk1.CLOCK2;
+
+MONITOR clk1, clk2, J1, K1, jk1.Q;

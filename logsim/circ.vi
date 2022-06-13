@@ -1,0 +1,27 @@
+CLOCK clk(PERIOD=1);
+
+NAND nand[1 TO 2](IN = 3);
+NAND nand[3 TO 8](IN = 2);
+# NAND notclk(IN = 2);
+NOT not1;
+
+SWITCH J = 0, K = 0;
+
+CONNECT clk -> nand1.I3, clk -> nand2.I1;
+CONNECT J -> nand1.I2, K -> nand2.I2;
+
+CONNECT nand1 -> nand3.I1, nand2 -> nand4.I2;
+CONNECT nand3 -> nand4.I1, nand4 -> nand3.I2;
+
+CONNECT nand3 -> nand5.I1, nand4 -> nand6.I2;
+
+CONNECT clk -> not1.I1;
+
+CONNECT not1 -> nand5.I2, not1 -> nand6.I1;
+
+CONNECT nand5 -> nand7.I1, nand6 -> nand8.I2;
+CONNECT nand7 -> nand8.I1, nand8 -> nand7.I2;
+
+CONNECT nand7 -> nand2.I3, nand8 -> nand1.I1;
+
+MONITOR J, K, clk, nand7, nand8;

@@ -1,0 +1,8 @@
+AND and[1 TO 2](IN =2);
+SWITCH sw1 = 1;
+SWITCH sw0 = 0;
+
+CONNECT sw0 -> and1.I1, sw01 -> and1.I2;
+CONNECT sw1 -> and2.I1, sw1 -> and2.I2;
+
+MONITOR and1, and2;

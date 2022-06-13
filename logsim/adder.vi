@@ -1,0 +1,16 @@
+# Initialising adder circuit
+SWITCH A = 0, B = 0, Cin = 0;
+
+XOR xor1, SUM;
+AND and1(IN=2), and2(IN=2);
+OR Cout(IN=2);
+
+# Connections
+CONNECT A -> xor1.I1, B -> xor1.I2;
+CONNECT A -> and2.I1, B -> and2.I2;
+CONNECT xor1 -> SUM.I1, Cin -> SUM.I2;
+CONNECT Cin -> and1.I1, xor1 -> and1.I2;
+CONNECT and1 -> Cout.I1, and2 -> Cout.I2;
+
+# Monitors
+MONITOR A, B, Cin, SUM, Cout;

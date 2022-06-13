@@ -1,0 +1,13 @@
+AND and[1 TO 2](IN=2);
+OR or1(IN = 2);
+NOT not[1 TO 2];
+
+SWITCH sw[1 TO 4] = 1;
+
+CONNECT sw1 -> and1.I1, sw2 -> and1.I2;
+CONNECT sw3 -> not1.I1;
+CONNECT and1 -> or1.I1, not1 -> or1.I2;
+CONNECT or1 ->and2.I1, sw4 -> and2.I2;
+CONNECT and2 ->not2.I1;
+
+MONITOR not2;

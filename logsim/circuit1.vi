@@ -1,0 +1,43 @@
+NAND nandA[1 TO 2](IN = 3);
+NAND nandAA[1 TO 2](IN = 2);
+NAND nandB[1 TO 2](IN = 3);
+NAND nandBB[1 TO 2](IN = 2);
+NAND nandC[1 TO 2](IN = 3);
+NAND nandCC[1 TO 2](IN = 2);
+NAND nandD[1 TO 2](IN = 3);
+NAND nandDD[1 TO 2](IN = 2);
+
+CLOCK clk (PERIOD = 1);
+SWITCH sw1 = 1;
+
+#DESIGN JK flip flops
+CONNECT sw1 -> nandA1.I2, sw1 -> nandA2.I2; #connecting J-K
+CONNECT sw1 -> nandB1.I2, sw1 -> nandB2.I2; #connecting J-K
+CONNECT sw1 -> nandC1.I2, sw1 -> nandC2.I2; #connecting J-K
+CONNECT sw1 -> nandD1.I2, sw1 -> nandD2.I2; #connecting J-K
+
+#connect feedback
+CONNECT nandAA2 -> nandA1.I1, nandAA1 -> nandA2.I3;
+CONNECT nandBB2 -> nandB1.I1, nandBB1 -> nandB2.I3;
+CONNECT nandCC2 -> nandC1.I1, nandCC1 -> nandC2.I3;
+CONNECT nandDD2 -> nandD1.I1, nandDD1 -> nandD2.I3;
+
+#connect IN=2 nands
+CONNECT nandA1 -> nandAA1.I1, nandA2 -> nandAA2.I2;
+CONNECT nandB1 -> nandBB1.I1, nandB2 -> nandBB2.I2;
+CONNECT nandC1 -> nandCC1.I1, nandC2 -> nandCC2.I2;
+CONNECT nandD1 -> nandDD1.I1, nandD2 -> nandDD2.I2;
+
+#connect feedback in IN=2 nand
+CONNECT nandAA1 -> nandAA2.I1, nandAA2 -> nandAA1.I2;
+CONNECT nandBB1 -> nandBB2.I1, nandBB2 -> nandBB1.I2;
+CONNECT nandCC1 -> nandCC2.I1, nandCC2 -> nandCC1.I2;
+CONNECT nandDD1 -> nandDD2.I1, nandDD2 -> nandDD1.I2;
+
+#connect clock of JK1
+CONNECT clk -> nandA1.I3, clk -> nandA2.I1;
+CONNECT nandAA1-> nandB1.I3, nandAA1-> nandB2.I1;
+CONNECT nandBB1-> nandC1.I3, nandBB1-> nandC2.I1;
+CONNECT nandCC1 -> nandD1.I3, nandCC1 -> nandD2.I1;
+
+MONITOR nandAA1, nandBB1, nandCC1, nandDD1;

@@ -1,0 +1,72 @@
+CIRCUIT TFF1(IN = 2, OUT = 2)
+{
+	NAND nand[1 TO 2](IN = 3);
+	NAND nand[3 TO 4](IN = 2);
+
+	CONNECT nand1 -> nand3.I1, nand2 -> nand4.I2;
+	CONNECT nand3 -> nand4.I1, nand4 -> nand3.I2;
+	CONNECT nand3 -> nand2.I3, nand4 -> nand1.I1;
+
+	INPUT T = nand1.I2, T = nand2.I2;
+	INPUT CLK = nand1.I3, CLK = nand2.I1;
+
+	OUTPUT Q = nand3, QBAR = nand4;
+};
+
+CIRCUIT TFF2(IN = 2, OUT = 2)
+{
+	NAND nand[1 TO 2](IN = 3);
+	NAND nand[3 TO 4](IN = 2);
+
+	CONNECT nand1 -> nand3.I1, nand2 -> nand4.I2;
+	CONNECT nand3 -> nand4.I1, nand4 -> nand3.I2;
+	CONNECT nand3 -> nand2.I3, nand4 -> nand1.I1;
+
+	INPUT T = nand1.I2, T = nand2.I2;
+	INPUT CLK = nand1.I3, CLK = nand2.I1;
+
+	OUTPUT Q = nand3, QBAR = nand4;
+};
+
+CIRCUIT TFF3(IN = 2, OUT = 2)
+{
+	NAND nand[1 TO 2](IN = 3);
+	NAND nand[3 TO 4](IN = 2);
+
+	CONNECT nand1 -> nand3.I1, nand2 -> nand4.I2;
+	CONNECT nand3 -> nand4.I1, nand4 -> nand3.I2;
+	CONNECT nand3 -> nand2.I3, nand4 -> nand1.I1;
+
+	INPUT T = nand1.I2, T = nand2.I2;
+	INPUT CLK = nand1.I3, CLK = nand2.I1;
+
+	OUTPUT Q = nand3, QBAR = nand4;
+};
+
+
+SWITCH on = 1;
+
+CLOCK clk(PERIOD=1);
+
+CONNECT on -> TFF1.T, on -> TFF2.T, on -> TFF3.T;
+CONNECT clk -> TFF1.CLK;
+CONNECT TFF1.Q -> TFF2.CLK, TFF2.Q -> TFF3.CLK;
+
+MONITOR clk, TFF1.Q, TFF2.Q, TFF3.Q;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+Semantic errors
+Remove unnecessary comments
+Remove unnecessary print statements

@@ -1,0 +1,57 @@
+# Initialising devices
+SWITCH sw[1 TO 2] = 0, sw[11 TO 12] = 1;
+NAND nand(IN = 3), nand6          (IN = 4);
+
+
+XOR a, b[2 TO 5];
+
+
+NAND nand[1 TO 2](IN = 3), nand[3 TO 4](IN = 4);
+
+CLOCK clk(PERIOD =           50), ck(PERIOD = 20);
+
+
+#defining connections
+
+CONNECT sw1 -> nand1.I1;
+CONNECT sw2 -> nand1.I2;
+CONNECT sw1 -> nand1.I2;
+
+CONNECT sw1 -> nand.I1;
+CONNECT sw2 -> nand.I2;
+CONNECT nand1-> nand.I3;
+
+CONNECT a2 ->     nand2.I1;
+CONNECT nand ->nand2.I2;
+CONNECT a3->nand2.I3;
+
+CONNECT sw1 ->a2.I1;
+CONNECT sw2 ->     a2.I2;
+
+CONNECT sw1 ->a3.I1;
+CONNECT sw1 ->     a3.I2;
+
+#switchset
+SWITCHSET a=1,b = 0;
+
+#initialise dtype
+DTYPE d[1 TO 2];
+
+#dtype connection
+sw1 ->d.SET;
+nand -> d.CLEAR;
+clk->d.CLK;
+
+#make connection using dtype
+d.QBAR -> nand6.I1;
+d.Q -> nand6.I2;
+d.QBAR -> nand6.I3;
+d.Q -> nand6.I4;
+
+
+#activate monitor
+MONITOR nand3,nand4,d.Q,clk                     ;
+
+
+
+

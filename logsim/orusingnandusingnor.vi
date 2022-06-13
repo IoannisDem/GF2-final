@@ -1,0 +1,60 @@
+CIRCUIT na1
+{
+	NOR nor[1 TO 4](IN = 2);
+	
+	CONNECT nor1 -> nor3.I1, nor2 -> nor3.I2;
+	CONNECT nor3 -> nor4.I1, nor3 -> nor4.I2;
+
+	INPUT I1 = nor1.I1, I1 = nor1.I2;
+	INPUT I2 = nor2.I1, I2 = nor2.I2;
+
+	OUTPUT O1 = nor4;
+}
+
+CIRCUIT na2
+{
+	NOR nor[1 TO 4](IN = 2);
+	
+	CONNECT nor1 -> nor3.I1, nor2 -> nor3.I2;
+	CONNECT nor3 -> nor4.I1, nor3 -> nor4.I2;
+
+	INPUT I1 = nor1.I1, I1 = nor1.I2;
+	INPUT I2 = nor2.I1, I2 = nor2.I2;
+
+	OUTPUT O1 = nor4;
+}
+
+CIRCUIT na3
+{
+	NOR nor[1 TO 4](IN = 2);
+	
+	CONNECT nor1 -> nor3.I1, nor2 -> nor3.I2;
+	CONNECT nor3 -> nor4.I1, nor3 -> nor4.I2;
+
+	INPUT I1 = nor1.I1, I1 = nor1.I2;
+	INPUT I2 = nor2.I1, I2 = nor2.I2;
+
+	OUTPUT O1 = nor4;
+}
+
+
+SWITCH A = 0, B = 0;
+
+CONNECT A -> na1.I1, A -> na1.I2;
+CONNECT B -> na2.I1, B -> na2.I2;
+
+CONNECT na1.O1 -> na3.I1, na2.O1 -> na3.I2;
+
+MONITOR A, B, na3.O1;
+
+
+
+
+
+
+
+
+
+
+
+

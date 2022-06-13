@@ -1,0 +1,101 @@
+(* For the below devices, we allow the user to create multiple gates
+ * in one go using loop_times. For example, NAND nand[1 TO 3](IN = 2)
+ * is equivalent to NAND nand1(IN = 2), nand2(IN = 2), nand3(IN = 2); *)
+
+
+(* Defining a switch *)
+
+switch = "SWITCH” , single_switch , { "," , single_switch } , ";”  ;
+single_switch = name , [ "[" , loop_times , "]" ] , "=", binary_digit ;
+
+
+(* Defining a clock *)
+
+clock = "CLOCK” , single_clock , { "," , single_clock} , ";”  ;
+single_clock = name , [ "[" , loop_times , "]" ] , "(” , "PERIOD” , "=” , number ")” ;
+
+
+(* Defining AND, OR, NAND and NOR gate
+ * All of these gates are defined together *)
+
+gate_list = gate_name , gate, { ",” , gate } , ";” ;
+
+gate = name , [ "[" , loop_times , "]" ] , in ;
+in = "(” , "IN” , "=” , number , ")” ;
+
+gate_name = ( "OR” | "AND” | "NAND” | "NOR” ) ;
+
+
+(* Defining a XOR gate *)
+
+xor_list = "XOR” , xor_gate , { ",” , xor_gate } , ";” ;
+xor_gate = name , [ "[" , loop_times , "]" ] ;
+
+
+(* Defining a NOT gate *)
+not_list = "NOT” , not_gate , { ",” , not_gate } , ";” ;
+not_gate = name , [ "[" , loop_times , "]" ] ;
+
+
+(* Defining a DTYPE *)
+
+dtype = "DTYPE" , single_dtype , { "," , single_dtype } , ";" ;
+single_dtype = name , [ "[" , loop_times , "]" ] ;
+
+
+(* Making a connection *)
+
+connectlist = "CONNECT" , connection , { "," , connection } , ";" ;
+connection = signame , "->" , signame ;
+
+
+(* Monitoring points *)
+
+monitor_list = "MONITOR" , signame , { "," , signame } , ";" ;
+
+
+(* Users can define a circuit, which encapsulates devices and connections
+ * Only devices and connections can be used within a circuit
+ * Monitors and switches cannot be used  
+ * To define the input and output interface to the circuit, use the
+ * INPUT and OUTPUT commands 						  *)
+
+circuit = "CIRCUIT" , name , "{" circuit_command , { circuit_command  } "}" ;
+circuit_command = ( gate_list | xor_list  | not_list |
+		    dtype | connectlist | circuit_input | circuit_output ) ;
+
+circuit_input = "INPUT", circuit_connection, { "," , circuit_connection } ;
+circuit_output = "OUTPUT", circuit_connection, { "," , circuit_connection } ;
+
+circuit_connection = port , "=" , signame ;
+
+
+
+(* Defining name and number *)
+
+signame = ( name , [ "." , port ] ) ;
+name = letter , { letter | digit } ;
+port = letter , { letter | digit } ; 	(* Defined for clarity *)
+
+number = digit_excluding_zero, {digit};
+binary_digit  = ("0" | "1");
+
+letter = "A" | "B" | "C" | "D" | "E" | "F" | "G"
+       | "H" | "I" | "J" | "K" | "L" | "M" | "N"
+       | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
+       | "V" | "W" | "X" | "Y" | "Z" | "a" | "b"
+       | "c" | "d" | "e" | "f" | "g" | "h" | "i"
+       | "j" | "k" | "l" | "m" | "n" | "o" | "p"
+       | "q" | "r" | "s" | "t" | "u" | "v" | "w"
+       | "x" | "y" | "z" ;
+
+digit_excluding_zero = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+digit                = "0" | digit excluding zero ;
+
+
+(* To allow user to create multiple devices at ones, we define loop_times
+ * This is an optional parameter
+ * which will allow writing statements like NAND nand[1 to 3](IN = 2);
+ * This is equivalent to NAND nand1(IN = 2), nand2(IN = 2), nand3(IN = 2); *)
+
+loop_times = number , "TO" , number ;

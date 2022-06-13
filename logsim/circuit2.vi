@@ -1,0 +1,20 @@
+XOR a;
+DTYPE d[1 TO 3];
+AND and (IN=2);
+SWITCH sw[1 TO 2] = 0;
+CLOCK clk (PERIOD =1);
+
+CONNECT clk ->d1.CLK,clk ->d2.CLK, clk ->d3.CLK;
+CONNECT sw1 ->d1.SET, sw1 ->d2.SET, sw1 ->d3.SET;
+CONNECT sw1 ->d1.CLEAR, sw1 ->d2.CLEAR, sw1 ->d2.CLEAR;
+
+CONNECT a -> d1.DATA;
+CONNECT d1.Q->a.I1;
+
+CONNECT d2.QBAR->d.DATA;
+CONNECT d2.Q->a.I2;
+CONNECT d2.Q->and.I1;
+CONNECT d1.Q ->and.I2;
+CONNECT and ->d3.DATA;
+
+MONITOR d3.Q;

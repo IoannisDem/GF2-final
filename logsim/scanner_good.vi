@@ -1,0 +1,2 @@
+SWITCH sw[1 TO 2] = 0; NAND nand1(IN = 2); CONNECT sw1 -> nand1.I1; CONNECT sw2 -> nand1.I2;
+SWITCH sw[3 TO 4] = 0; NAND nand2(IN = 2); CONNECT sw3 -> nand2.I1; CONNECT sw4 -> nand2.I2;

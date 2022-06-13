@@ -1,0 +1,16 @@
+# Initialising dtypes
+SWITCH D = 0, S = 0, C = 0;
+
+NAND nand1(IN = 1), nand[2 TO 5](IN = 2); # nand gates for dtype from scratch
+
+DTYPE d; # Embedded dtype
+
+CLOCK CK(PERIOD = 1);
+
+CONNECT D -> nand4.I1, CK -> nand4.I2, D -> nand1.I1, CK -> nand2.I1;
+CONNECT nand1 -> nand2.I2, nand4 -> nand5.I1, nand2 -> nand3.I2;
+CONNECT nand3 -> nand5.I2, nand5 -> nand3.I1;
+CONNECT D -> d.DATA, CK -> d.CLK;
+CONNECT S -> d.SET, C -> d.CLEAR;
+
+MONITOR d.Q, nand5, D;

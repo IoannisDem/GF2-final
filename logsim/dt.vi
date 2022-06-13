@@ -1,0 +1,26 @@
+DTYPE d[1 TO 4];
+CLOCK clk (PERIOD = 1);
+NOT not[1 TO 4];
+SWITCH sw1= 1;
+SWITCH sw2 = 0;
+
+CONNECT clk ->d1.CLK;
+CONNECT d1.Q ->not1.I1;
+CONNECT not1 -> d1.DATA;
+CONNECT d1.Q ->d2.CLK;
+
+CONNECT d2.Q ->not2.I1;
+CONNECT not2 -> d2.DATA;
+CONNECT d2.Q ->d3.CLK;
+
+CONNECT d3.Q ->not3.I1;
+CONNECT not3 -> d3.DATA;
+CONNECT d3.Q ->d4.CLK;
+
+CONNECT d4.Q ->not4.I1;
+CONNECT not4 -> d4.DATA;
+
+CONNECT sw2 ->d1.SET,sw2 ->d2.SET,sw2 ->d3.SET,sw2 ->d4.SET;
+CONNECT sw2 ->d1.CLEAR,sw2 ->d2.CLEAR,sw2 ->d3.CLEAR,sw2 ->d4.CLEAR;
+
+MONITOR d1.Q,d2.Q,d3.Q,d4.Q;

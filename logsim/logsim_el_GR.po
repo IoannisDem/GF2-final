@@ -1,0 +1,379 @@
+# GREEK TRANSLATION FOR LOGSIM - GF2 PROJECT
+# RICHARD MONTEIRO <rm967@cam.ac.uk>, 2022.
+# YASH GAIKWAD <ysg22@cam.ac.uk>, 2022.
+# IOANNIS DEMETRIADES <id350@cam.ac.uk>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: logsim \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-09 20:33+0100\n"
+"Last-Translator: RICHARD MONTEIRO <rm967@cam.ac.uk>\n"
+"Language-Team: \n"
+"Language: GREEK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: gui.py:964
+msgid "&About"
+msgstr "&Σχετικά με"
+
+#: gui.py:965
+msgid "&Colour"
+msgstr "&Χρώμα"
+
+#: gui.py:963
+msgid "&Dev Info"
+msgstr "&Πληροφορίες"
+
+#: gui.py:962
+msgid "&Exit"
+msgstr "&Εξοδος"
+
+#: gui.py:966
+msgid "&File"
+msgstr "&Αρχείο"
+
+#: gui.py:968
+msgid "&Help"
+msgstr "&Βοήθεια"
+
+#: gui.py:978
+msgid "&Magenta"
+msgstr "&Ματσέντα"
+
+#: gui.py:976
+msgid "&Monochrome"
+msgstr "&Μονόχρωμο"
+
+#: gui.py:961
+msgid "&Open"
+msgstr "&Ανοιξε"
+
+#: gui.py:979
+msgid "&Purple"
+msgstr "&Μωβ"
+
+#: gui.py:977
+msgid "&Red"
+msgstr "&Κόκκινο"
+
+#: gui.py:967
+msgid "&View"
+msgstr "&Προβολή"
+
+#: gui.py:857
+msgid "> ERROR: {}\n"
+msgstr "> ΣΦΑΛΜΑ: {}\n"
+
+#: gui.py:847
+msgid ""
+"> Errors in definition file. Code cannot be compiled. Fix errors, then re-open file.\n"
+"\n"
+msgstr ""
+"> Σφάλματα στο αρχείο ορισμού. Ο κώδικας δεν μπορεί να συντακεί. Διορθώστε σφάλματα και 'ανοιξε ξανά το αρχείο.\n"
+"\n"
+
+#: gui.py:849
+msgid ""
+"> Number of errors detected:{}\n"
+"\n"
+msgstr ""
+"> Αριθμός σφαλμάτων που εντοπίστηκαν:{}\n"
+"\n"
+
+#: gui.py:1120
+msgid "About Logsim"
+msgstr "Σχετικά με 'logsim'"
+
+#: gui.py:660
+#, fuzzy
+msgid "Add"
+msgstr "◀ Προσθήκη"
+
+#: gui.py:1153
+msgid "Changing colour scheme to Magenta"
+msgstr "Αλλαγή χρώματος σε ματζέντα"
+
+#: gui.py:1145
+msgid "Changing colour scheme to Monochrome"
+msgstr "Αλλαγή χρώματος σε μονόχρωμο"
+
+#: gui.py:1157
+msgid "Changing colour scheme to Purple"
+msgstr "Αλλαγή χρώματος σε μωβ"
+
+#: gui.py:1149
+msgid "Changing colour scheme to Red"
+msgstr "Αλλαγή χρώματος σε κόκκινο"
+
+#: gui.py:985
+msgid "Compile"
+msgstr "Συντάσσω"
+
+#: gui.py:734
+msgid "Connect"
+msgstr "Σύνδεση"
+
+#: gui.py:1258
+#, fuzzy
+msgid "Connection button pressed."
+msgstr "Πατήθηκε το κουμπί οθονών."
+
+#: gui.py:988
+msgid "Continue"
+msgstr "Προχώρα"
+
+#: gui.py:1213
+msgid "Continuing for {} cycles. Total: {} cycles."
+msgstr "Συνεχισαι για {} κύκλους. Σύνολο: {} κύκλοι."
+
+#: gui.py:420
+msgid "Could not change switch state."
+msgstr "Δεν ήταν δυνατή η αλλαγή της κατάστασης του διακόπτη."
+
+#: gui.py:983
+msgid "Cycles:"
+msgstr "Κύκλοι:"
+
+#: gui.py:1185
+msgid "Definition file compiled."
+msgstr "Αρχείο ορισμού συντάκτικε."
+
+#: gui.py:1141
+msgid "Developer mode toggled."
+msgstr "Εναλλαγή της λειτουργίας προγραμματιστή."
+
+#: gui.py:543
+msgid ""
+"Device {} \n"
+"now monitored."
+msgstr ""
+"Συσκευή {} \n"
+"παρακολουθείται."
+
+#: gui.py:564
+msgid ""
+"Device {} \n"
+"now unmonitored."
+msgstr ""
+"Συσκευή {} \n"
+"ελευθερώνεται."
+
+#: gui.py:662 gui.py:746
+msgid "Disconnect"
+msgstr "Αποσύνδεση"
+
+#: gui.py:242
+msgid "Down arrow press. Scrolling down: "
+msgstr "Πατήστε το κάτω βέλος. κύλιση προς τα κάτω:"
+
+#: gui.py:613 gui.py:994
+msgid "Edit Connections"
+msgstr "Ενώσεις"
+
+#: gui.py:455 gui.py:992
+msgid "Edit Monitors"
+msgstr "Οθόνες"
+
+#: gui.py:354 gui.py:990
+msgid "Edit Switches"
+msgstr "Διακόπτες"
+
+#: gui.py:1183
+msgid "Error"
+msgstr "Σφάλμα"
+
+#: gui.py:841
+msgid "Error display"
+msgstr "Εμφάνιση σφάλματος"
+
+#: gui.py:1083
+#, fuzzy
+msgid "Error! Network oscillating. Verify connections."
+msgstr "Λάθος! Δίκτυο που ταλαντώνεται. Ενημερώστε το αρχείο ορισμού και ξανανοίξτε."
+
+#: gui.py:1180
+#, fuzzy
+msgid "Errors in definition file. Code cannot be compiled.Fix errors, then re-open file."
+msgstr "Σφάλματα στο αρχείο ορισμού. Ο κώδικας δεν μπορεί να συντακεί. Διορθώστε σφάλματα και 'ανοιξε ξανά το αρχείο."
+
+#: gui.py:814
+msgid ""
+"Input {}\n"
+"connected to {}"
+msgstr ""
+"Εισαγωγή {}\n"
+"ενωμένο στο {}"
+
+#: gui.py:797
+msgid ""
+"Input {}\n"
+"disconnected"
+msgstr ""
+"Εισαγωγή {}\n"
+"αποσύνδεση"
+
+#: gui.py:648
+msgid "Inputs"
+msgstr "Εισαγωγές"
+
+#: gui.py:247
+msgid "Left arrow press. Scrolling left: "
+msgstr "Πατήστε το αριστερό βέλος. Κύλιση αριστερά: "
+
+#: gui.py:1119
+msgid "Logic Simulator, Team 17"
+msgstr "Logic Simulator, Ομάδα 17"
+
+#: gui.py:470
+msgid "Monitored"
+msgstr "Παρακολούθηση"
+
+#: gui.py:1243
+msgid "Monitors button pressed."
+msgstr "Πατήθηκε το κουμπί οθονών."
+
+#: gui.py:199
+msgid "Mouse button pressed at: "
+msgstr "Το κουμπί του ποντικιού πατιέται στο: "
+
+#: gui.py:202
+msgid "Mouse button released at: "
+msgstr "Το κουμπί του ποντικιού ελευθερώθηκε: "
+
+#: gui.py:205
+msgid "Mouse left canvas at: "
+msgstr "Αριστερός καμβάς του ποντικιού στο: "
+
+#: gui.py:212
+msgid "Negative mouse wheel rotation. Scrolling down: "
+msgstr "Αρνητική περιστροφή τροχού ποντικιού. Κύλιση προς τα κάτω: "
+
+#: gui.py:1164
+msgid "New number of cycles per execution: "
+msgstr "Νέος αριθμός κύκλων ανά εκτέλεση: "
+
+#: gui.py:1127
+msgid "Open file cancelled."
+msgstr "Ακύρωση ανοίγματος αρχέιου."
+
+#: gui.py:1122
+#, fuzzy
+msgid "Open vi file"
+msgstr "Άνοιγμα αρχείου="
+
+#: gui.py:1132
+msgid "Opening file="
+msgstr "Άνοιγμα αρχείου="
+
+#: gui.py:647
+msgid "Outputs"
+msgstr "Εξόδοι"
+
+#: gui.py:218
+msgid "Positive mouse wheel rotation. Scrolling up: "
+msgstr "Θετική περιστροφή τροχού ποντικιού. Κύλιση προς τα πάνω: "
+
+#: gui.py:661
+#, fuzzy
+msgid "Remove"
+msgstr "Αφαίρεση ▶"
+
+#: gui.py:485
+msgid "Remove ▶"
+msgstr "Αφαίρεση ▶"
+
+#: gui.py:1302
+msgid "Resetting view"
+msgstr "Επαναφορά προβολής"
+
+#: gui.py:253
+msgid "Right arrow press. Scrolling right: "
+msgstr "Πατήστε το δεξί βέλος. Κύλιση δεξιά: "
+
+#: gui.py:1186
+msgid "Run"
+msgstr "Τρέξιμο"
+
+#: gui.py:1290
+msgid "Scrolling left: {}."
+msgstr "Κύλιση αριστερά: {}."
+
+#: gui.py:1276
+msgid "Scrolling right: {}."
+msgstr "Κύλιση δεξιά: {}."
+
+#: gui.py:999
+msgid "Simulated Signals"
+msgstr "Προσομοιωμένα σήματα"
+
+#: gui.py:1197
+msgid "Simulation running for {} cycles"
+msgstr "Η προσομοίωση εκτελείται για {} κύκλους"
+
+#: gui.py:720
+msgid "Some inputs were left disconnected. System may oscillate."
+msgstr "Κάποιες εισαγωγές δεν ενώθηκαν. Το σύστημα ταλαντεύεται."
+
+#: gui.py:372
+msgid "Switch ON"
+msgstr "Άνοιξε"
+
+#: gui.py:418
+msgid "Switch {} set to {}."
+msgstr "Ο διακόπτης {} ορίστηκε σε {}."
+
+#: gui.py:1228
+msgid "Switches button pressed."
+msgstr "Το κουμπί διακόπτη πατημένο."
+
+#: gui.py:315
+msgid "Trace {}"
+msgstr "Ιχνος {}"
+
+#: gui.py:471
+msgid "Unmonitored"
+msgstr "Ελευθερώνεται"
+
+#: gui.py:236
+msgid "Up arrow press. Scrolling up: "
+msgstr "Πατήστε το επάνω βέλος. Κύλιση προς τα πάνω:"
+
+#: gui.py:480
+msgid "◀ Add"
+msgstr "◀ Προσθήκη"
+
+msgid "Must specify an output"
+msgstr "Προσδιοόρισε έξοδο"
+
+msgid "NON-USER ERROR"
+msgstr "Όχι λάθος χειρηστή"
+
+msgid "The chosen (device_id, output_id) exists in the dictionary"
+msgstr "Η συγκεκριμένη συσκευή (device_id, output_id) υπάρχει στο λεξικό"
+
+msgid "The port does not exist or is not an input port"
+msgstr "Η είσοδος δεν υπάρχει ή δεν είναι είσοδος"
+
+msgid "The specified device is not an output and cannot be monitored"
+msgstr "Δεν είναι έξοδος και δεν μπορεί να ελεγκτεί"
+
+msgid "Trying connect output of a device to another device output."
+msgstr "Ένωση εξόδου συσκευής σε άλλη έξοδο."
+
+msgid "Trying to access an invalid input or output port."
+msgstr "Πρόσβαση σε λάθος είσοδο ή έξοδο."
+
+msgid "Trying to access or monitor a device which has not been created."
+msgstr "Πρόσβαση ή έξοδος συσκευής που δεν δημιουργήθηκε."
+
+msgid "Trying to connect a device to an input pin which is already connected to another device."
+msgstr "Ένωση σε είσοδο συσκευής σε είσοδο που είναι ενωμένη σε άλλη συσκευή."
+
+msgid "Trying to connect input of a device to another device input."
+msgstr "Ένωση είσοδος συσκευής σε άλλη είσοδο."
+
+msgid "Trying to define a device that already exists."
+msgstr "Δημιουργία συσκευής που υπάρχει."
